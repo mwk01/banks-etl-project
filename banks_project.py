@@ -106,29 +106,24 @@ db_name = "Banks.db"
 table_name = "Largest_banks"
 
 
-# Task 1
 log_progress("Preliminaries complete. Initiating ETL process")
 
 
-# Task 2
 df = extract(url, table_attribs)
 
 log_progress("Data extraction complete. Initiating Transformation process")
 
 
-# Task 3
 df = transform(df, csv_path)
 
 log_progress("Data transformation complete. Initiating Loading process")
 
 
-# Task 4
 load_to_csv(df, output_path)
 
 log_progress("Data saved to CSV file")
 
 
-# Task 5
 sql_connection = sqlite3.connect(db_name)
 
 log_progress("SQL Connection initiated")
@@ -138,7 +133,6 @@ load_to_db(df, sql_connection, table_name)
 log_progress("Data loaded to Database as a table, Executing queries")
 
 
-# Task 6
 
 query_statement = "SELECT * FROM Largest_banks"
 run_query(query_statement, sql_connection)
@@ -152,7 +146,6 @@ run_query(query_statement, sql_connection)
 log_progress("Process Complete")
 
 
-# Task 7
 sql_connection.close()
 
 log_progress("Server Connection closed")
